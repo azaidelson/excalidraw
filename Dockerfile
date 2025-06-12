@@ -4,6 +4,8 @@ WORKDIR /opt/node_app
 
 COPY . .
 
+RUN yarn config set registry https://registry.npmjs.org/ && yarn --network-timeout 600000
+
 # do not ignore optional dependencies:
 # Error: Cannot find module @rollup/rollup-linux-x64-gnu
 RUN yarn --network-timeout 600000
